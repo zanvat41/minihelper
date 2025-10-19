@@ -1,0 +1,16 @@
+<view class="weui-panel">
+  
+  <view class="weui-panel__hd">股票:</view>
+
+  <view class="weui-media-box" wx:for='{{stockData}}'
+    wx:key="this">
+    <view class="weui-media-box__title">{{item.name}} ({{item.increase}})</view>
+    <view class="weui-media-box__desc">当前: {{item.now_price}}</view>
+    <view class="weui-media-box__info">
+      <view class="weui-media-box__info__meta">最高: {{item.today_max}}</view>
+      <view class="weui-media-box__info__meta">最低: {{item.today_min}}</view>
+      <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">开盘: {{item.start_price}}</view>
+    </view>
+  </view>
+
+</view>

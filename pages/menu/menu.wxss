@@ -1,0 +1,10 @@
+/* pages/menu/menu.wxss */
+/* Unauthorized state styling */
+.unauthorized-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  color: var(--weui-FG-1, rgba(0, 0, 0, 0.55));
+  font-size: 16px;
+}

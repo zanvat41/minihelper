@@ -1,0 +1,29 @@
+/* pages/backup/backup.wxss */
+/* @import '../../../thirdparty/weui.wxss'; */
+
+/* WeUI icon close override for better visibility */
+.weui-icon-close::before {
+  content: "\00d7";
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Clean selection styles with visual filter */
+.weui-uploader__file.selected {
+  position: relative;
+  opacity: 0.6;
+  transform: scale(0.95);
+  transition: all 0.2s ease;
+}
+
+.weui-uploader__file.selected::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--weui-BRAND);
+  opacity: 0.3;
+  border-radius: inherit;
+}

@@ -1,0 +1,23 @@
+/* pages/picker/picker.wxss */
+
+/* Page-specific customizations only */
+.weui-cells {
+  margin: 16px;
+  border-radius: 8px;
+}
+
+.weui-cells__title:first-child {
+  margin-top: 16px;
+}
+
+/* Responsive design for different screen sizes */
+@media screen and (max-width: 320px) {
+  .weui-cells {
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+  
+  .weui-btn-area {
+    padding: 0 8px 24px;
+  }
+}

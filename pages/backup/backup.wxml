@@ -1,0 +1,87 @@
+<page-meta root-font-size="system"/>
+<view class="page" data-weui-theme="{{theme}}" data-weui-mode="{{mode}}">
+	<view class="page__hd">
+		<view class="weui-panel__hd">图片备份</view>
+	</view>
+	<view class="page__bd page__bd_spacing">
+		<view class="weui-cells weui-cells_after-title">
+			<view class="weui-cell weui-cell_uploader">
+				<view class="weui-cell__bd">
+					<view class="weui-uploader">
+						<view class="weui-uploader__hd" wx:if="{{filesToUpload.length > 0}}">
+							<view class="weui-uploader__title">待上传图片</view>
+							<view class="weui-uploader__info">{{filesToUpload.length}}/9</view>
+						</view>
+						<view class="weui-uploader__bd">
+							<view class="weui-uploader__files">
+								<view class="weui-uploader__file" wx:for="{{filesToUpload}}" wx:key="index">
+									<image class="weui-uploader__file__thumb" src="{{item}}" mode="aspectFill"></image>
+									<view class="weui-uploader__file__delete" bindtap="deleteSelectedImage" data-index="{{index}}">
+										<view class="weui-icon-close"></view>
+									</view>
+								</view>
+							</view>
+							<view class="weui-uploader__input-box" bindtap="chooseImage">
+								<input class="weui-uploader__input" type="file" accept="image/*" multiple=""/>
+							</view>
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+		
+		<view class="weui-btn-area">
+			<button type="button" class="weui-btn weui-btn_primary" id="btnUpload" bindtap="uploadFiles">
+        上传图片
+      </button>
+      <button type="button" class="weui-btn weui-btn_primary" id="btnDownload" bindtap="downloadSelectedFiles">
+        下载选中图片
+      </button>
+      <button type="button" class="weui-btn weui-btn_primary" id="btnDelete" bindtap="deleteFiles">
+        删除图片
+      </button>
+		</view>
+		
+		<!-- Stored images area -->
+		<view class="weui-cells weui-cells_after-title" wx:if="{{storedFiles.length > 0}}">
+			<view class="weui-cell weui-cell_uploader">
+				<view class="weui-cell__bd">
+					<view class="weui-uploader">
+						<view class="weui-uploader__hd">
+							<view class="weui-uploader__title">已备份图片</view>
+							<view class="weui-uploader__info">{{storedFiles.length}}</view>
+						</view>
+						<view class="weui-uploader__bd">
+							<view class="weui-uploader__files">
+								<view class="weui-uploader__file {{item.selected ? 'selected' : ''}}" wx:for="{{storedFiles}}" wx:key="index" bindtap="toggleStoredImageSelection" data-index="{{index}}">
+									<image class="weui-uploader__file__thumb" src="{{item.path}}" mode="aspectFill"></image>
+								</view>
+							</view>
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+		
+		<!-- Downloaded images area -->
+		<view class="weui-cells weui-cells_after-title" wx:if="{{downloadedFiles.length > 0}}">
+			<view class="weui-cell weui-cell_uploader">
+				<view class="weui-cell__bd">
+					<view class="weui-uploader">
+						<view class="weui-uploader__hd">
+							<view class="weui-uploader__title">已下载图片</view>
+							<view class="weui-uploader__info">{{downloadedFiles.length}}</view>
+						</view>
+						<view class="weui-uploader__bd">
+							<view class="weui-uploader__files">
+								<view class="weui-uploader__file" wx:for="{{downloadedFiles}}" wx:key="index">
+									<image class="weui-uploader__file__thumb" src="{{item}}" mode="aspectFill" bindlongpress="longPressConfirm" data-index="{{index}}"></image>
+								</view>
+							</view>
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>

@@ -1,0 +1,41 @@
+/* pages/homepage/homepage.wxss */
+
+.container {
+  padding: 20rpx;
+}
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: var(--weui-FG-1);
+}
+
+/* Custom icon styling for navigation items */
+.weui-cell__hd image {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 10rpx;
+}
+
+/* Button area styling */
+.button-sp-area {
+  margin: 0 auto;
+  padding: 30rpx 0;
+  width: 60%;
+}
+
+.mini-btn {
+  margin-bottom: 20rpx;
+}
